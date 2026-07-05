@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import TrustBar from "../components/TrustBar";
 import WhyChoose from "../components/WhyChoose";
+import TrustBar from "../components/TrustBar";
 import ResidentialServices from "../components/ResidentialServices";
 import BuildingScienceServices from "../components/BuildingScienceServices";
 import EngineerSection from "../components/EngineerSection";
@@ -18,8 +18,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <WhyChoose />
+        <TrustBar />
         <ResidentialServices />
         <BuildingScienceServices />
         <EngineerSection />
@@ -27,8 +27,8 @@ export default function Home() {
         <FutureTesting />
         <FAQ />
         <ContactSection />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
