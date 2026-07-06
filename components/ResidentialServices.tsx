@@ -1,67 +1,91 @@
-import {
-  Home,
-  Search,
-  Hammer,
-  ShieldCheck,
-} from "lucide-react";
+import { Hammer, Home, Search, ShieldCheck } from "lucide-react";
 
+import SectionHeader from "./shared/SectionHeader";
 import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    title: "Buyer's Home Inspection",
+    title: "Buyer Home Inspection",
     description:
-      "A comprehensive evaluation to help you make an informed purchasing decision.",
+      "A comprehensive inspection to help you understand the condition of a home before making one of life’s biggest investments.",
     icon: Search,
+    label: "For home buyers",
+    action: "View Inspection Details",
+    items: [
+  "Roof & Exterior",
+  "Foundation",
+  "Electrical System",
+  "Plumbing",
+  "Heating & Cooling",
+],
   },
   {
     title: "Pre-Listing Inspection",
     description:
-      "Identify issues before listing your home and reduce surprises during negotiations.",
+      "Identify potential concerns before listing your property and reduce surprises during the selling process.",
     icon: Home,
+    label: "For sellers",
+   action: "View Inspection Details",
+    items: [
+  "Identify Deficiencies",
+  "Maintenance Issues",
+  "Safety Concerns",
+  "Repair Priorities",
+  "Seller Preparation",
+],
   },
   {
-    title: "New Construction (Tarion)",
+    title: "New Construction / Tarion Inspection",
     description:
-      "Independent inspection support to help document deficiencies before warranty deadlines.",
+      "Independent inspection support for newly built homes to help document deficiencies before warranty deadlines.",
     icon: Hammer,
+    label: "For new homes",
+    action: "View Inspection Details",
+    items: [
+  "Warranty Deficiencies",
+  "Interior Finishes",
+  "Exterior Review",
+  "Building Envelope",
+  "Tarion Support",
+],
   },
   {
-    title: "Annual Home Maintenance",
+    title: "Annual Home Maintenance Inspection",
     description:
-      "Protect your investment with yearly maintenance assessments and practical recommendations.",
+      "A proactive review to help homeowners identify maintenance needs before they become costly repairs.",
     icon: ShieldCheck,
+    label: "For homeowners",
+    action: "View Inspection Details",
+    items: [
+  "Roof Condition",
+  "Water Intrusion",
+  "HVAC Review",
+  "Safety Items",
+  "Maintenance Planning",
+],
   },
 ];
 
 export default function ResidentialServices() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B88A2A]">
-            Residential Services
-          </p>
+    <section className="bg-[#F8FAFC] py-24">
+      <div className="mx-auto max-w-7xl px-8 lg:px-12">
+        <SectionHeader
+          eyebrow="Residential Inspection Services"
+          title="Inspection services for confident home decisions."
+          description="Whether you are buying, selling, maintaining, or moving into a new home, TrueNorth provides clear residential inspection services backed by building science knowledge."
+        />
 
-          <h2 className="text-4xl font-bold tracking-tight text-[#102A43] md:text-5xl">
-            Inspection services for confident home decisions.
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Whether you are buying, selling, maintaining, or moving into a new
-            home, TrueNorth provides clear, objective inspection services backed
-            by professional building science knowledge.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {services.map((service) => (
             <ServiceCard
               key={service.title}
               title={service.title}
               description={service.description}
               icon={service.icon}
-              label="Residential Inspection"
+              label={service.label}
+              action={service.action}
+              items={service.items}
             />
           ))}
         </div>
