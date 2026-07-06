@@ -1,5 +1,5 @@
 import { Hammer, Home, Search, ShieldCheck } from "lucide-react";
-
+import Container from "./shared/Container";
 import SectionHeader from "./shared/SectionHeader";
 import ServiceCard from "./ServiceCard";
 
@@ -69,7 +69,7 @@ const services = [
 export default function ResidentialServices() {
   return (
     <section className="bg-[#F8FAFC] py-24">
-      <div className="mx-auto max-w-7xl px-8 lg:px-12">
+      <Container>
         <SectionHeader
           eyebrow="Residential Inspection Services"
           title="Inspection services for confident home decisions."
@@ -89,7 +89,7 @@ export default function ResidentialServices() {
             />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

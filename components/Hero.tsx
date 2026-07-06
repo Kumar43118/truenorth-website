@@ -10,7 +10,7 @@ const trustItems = [
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[820px] overflow-hidden">
+    <section className="relative h-screen min-h-205 overflow-hidden">
       <Image
         src="/images/hero-home.jpg"
         alt="Modern residential home exterior"
