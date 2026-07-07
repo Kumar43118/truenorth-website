@@ -5,7 +5,7 @@ import TrustBar from "../components/TrustBar";
 import ResidentialServices from "../components/ResidentialServices";
 import BuildingScienceServices from "../components/BuildingScienceServices";
 import EngineerSection from "../components/EngineerSection";
-import InspectionProcess from "../components/InspectionProcess";
+import InspectionProcess from "../components/inspections/InspectionProcess";
 import TrueNorthApproach from "../components/TrueNorthApproach";
 import FutureTesting from "../components/FutureTesting";
 import FAQ from "../components/FAQ";
