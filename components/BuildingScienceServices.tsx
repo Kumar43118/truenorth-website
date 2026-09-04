@@ -42,7 +42,7 @@ export default function BuildingScienceServices() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
-              Some concerns require more than a standard checklist. TrueNorth
+              Some concerns require more than a standard checklist. Velora
               provides targeted building science reviews to help homeowners
               better understand structural, moisture, roofing, attic, and
               building-envelope-related issues.

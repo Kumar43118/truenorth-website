@@ -1,52 +1,81 @@
+import { ChevronDown } from "lucide-react";
+
 const faqs = [
   {
-    question: "Who performs the inspection?",
+    question: "What does a Velora home inspection include?",
     answer:
-      "Every inspection is personally conducted by a Licensed Professional Engineer (P.Eng.) with building science and field review experience.",
+      "A home inspection is a visual assessment of accessible building systems and components at the time of the inspection. Depending on the property and service selected, the inspection may include the exterior, roofing, structure, interiors, plumbing, electrical, heating and cooling systems, insulation, ventilation, and other accessible components.",
   },
   {
-    question: "How long does a home inspection take?",
+    question: "Who performs the home inspection?",
     answer:
-      "Most inspections take approximately 2 to 4 hours depending on the size, age, and complexity of the property.",
+      "Velora home inspections are led by a licensed Professional Engineer with experience in construction, building science, and building-envelope assessment. The home inspection remains a visual, non-invasive inspection and is not a comprehensive engineering investigation unless a separate engineering scope is specifically agreed upon.",
   },
   {
-    question: "Can I attend the inspection?",
+    question: "Should I attend the inspection?",
     answer:
-      "Yes. Clients are encouraged to attend so findings can be explained clearly on site.",
+      "When practical, we encourage clients to attend at least the final portion of the inspection. This provides an opportunity to review significant observations, ask questions, and better understand the property and any items that may deserve further attention.",
   },
   {
-    question: "When will I receive the report?",
+    question: "Will I receive a written inspection report?",
     answer:
-      "A digital report is typically provided shortly after the inspection, with photos, observations, and practical recommendations.",
+      "Yes. Home inspection services include a written report documenting relevant observations, photographs, identified concerns, and practical recommendations. The report is intended to help you understand the visible condition of the property and prioritize appropriate next steps.",
+  },
+  {
+    question: "Do you inspect new construction and Tarion homes?",
+    answer:
+      "Yes. Velora provides inspections for new homes and Tarion warranty milestones. The inspection can help identify and document visible deficiencies or concerns that may be useful when preparing warranty submissions or discussing items with the builder.",
+  },
+  {
+    question: "Are there limitations to a home inspection?",
+    answer:
+      "Yes. A home inspection is visual and non-invasive. Concealed, inaccessible, unsafe, obstructed, or otherwise unobservable conditions cannot be evaluated. Specialized testing, destructive investigation, code compliance reviews, environmental assessments, and detailed engineering analysis are outside a standard home inspection unless separately included in the agreed scope.",
   },
 ];
 
 export default function FAQ() {
   return (
-    <section className="bg-[#F8FAFC] py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#B88A2A]">
+    <section
+      aria-labelledby="faq-heading"
+      className="bg-white py-20 sm:py-24 lg:py-28"
+    >
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 lg:px-12">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#B88A2A] sm:text-sm">
             Frequently Asked Questions
           </p>
 
-          <h2 className="text-4xl font-bold tracking-tight text-[#102A43] md:text-5xl">
-            Common questions before booking.
+          <h2
+            id="faq-heading"
+            className="mt-5 text-4xl font-semibold tracking-[-0.025em] text-[#102A43] sm:text-5xl"
+          >
+            What to know before your home inspection.
           </h2>
+
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+            Understanding the inspection process can help you get more value
+            from your appointment and make better use of the findings when
+            planning your next decision.
+          </p>
         </div>
 
-        <div className="mt-12 space-y-4">
+        <div className="divide-y divide-slate-200 border-y border-slate-200">
           {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-3xl border border-slate-200 bg-white p-7"
-            >
-              <h3 className="text-lg font-bold text-[#102A43]">
-                {faq.question}
-              </h3>
+            <details key={faq.question} className="group">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left transition-colors hover:text-[#B88A2A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A63A] focus-visible:ring-offset-4">
+                <span className="text-lg font-semibold text-[#102A43]">
+                  {faq.question}
+                </span>
 
-              <p className="mt-3 leading-7 text-slate-600">{faq.answer}</p>
-            </div>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#F8FAFC] text-[#102A43] transition duration-300 group-open:rotate-180 group-open:bg-[#D4A63A]">
+                  <ChevronDown aria-hidden="true" className="h-4 w-4" />
+                </span>
+              </summary>
+
+              <div className="max-w-3xl pb-6 pr-12">
+                <p className="leading-7 text-slate-600">{faq.answer}</p>
+              </div>
+            </details>
           ))}
         </div>
       </div>

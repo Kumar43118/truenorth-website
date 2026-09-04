@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the TrueNorth Building Science website will be documented in this file.
+All notable changes to the Velora Building Science website will be documented in this file.
 
 ---
 
@@ -13,10 +13,10 @@ All notable changes to the TrueNorth Building Science website will be documented
 - Premium homepage redesign
 - Responsive navigation
 - Hero section
-- Why Choose TrueNorth
+- Why Choose Velora
 - Residential Inspection Services
 - Inspection Process
-- TrueNorth Approach
+- Velora Approach
 - Shared React components
 - Reusable SectionHeader
 - Reusable Container

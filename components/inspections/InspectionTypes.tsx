@@ -5,22 +5,21 @@ import {
   Wrench,
 } from "lucide-react";
 
+import Reveal from "@/components/animations/Reveal";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import ServiceCard from "@/components/ServiceCard";
-
 
 const services = [
   {
     title: "Buyer Home Inspection",
     description:
-      "Understand the condition of a home before you purchase. Our engineering-led inspections help identify visible deficiencies, maintenance concerns, and potential risks so you can make informed decisions.",
-    icon: Home,
+  "Understand the visible condition of a home before you purchase. Our engineering-informed inspections help identify visible deficiencies, maintenance concerns, and conditions that may warrant further investigation.",    icon: Home,
     label: "Most Popular",
     action: "Learn More",
-    href: "/home-inspections/buyer",
+    href: "/home-inspections/buyer-inspection",
     items: [
-      "Structural Review",
+      "Visible Structural Conditions",
       "Roof & Attic",
       "Building Envelope",
       "Mechanical Systems",
@@ -29,41 +28,41 @@ const services = [
   {
     title: "Pre-Listing Inspection",
     description:
-      "Prepare your property before it goes on the market. Identify issues early, reduce surprises during negotiations, and build confidence with prospective buyers.",
+      "Prepare your property before it reaches the market. Identify visible concerns early, reduce surprises during negotiations, and provide greater clarity to prospective buyers.",
     icon: ClipboardCheck,
     action: "Learn More",
     href: "/home-inspections/pre-listing",
     items: [
       "Seller Preparation",
-      "Maintenance Review",
-      "Condition Assessment",
+      "Maintenance Priorities",
+      "Visible Condition Review",
       "Market Readiness",
     ],
   },
   {
     title: "New Construction / Tarion Inspection",
     description:
-      "Protect your investment by documenting deficiencies and construction concerns before warranty deadlines. Ideal for new homeowners during the Tarion warranty period.",
+      "Document visible deficiencies and construction concerns before applicable warranty deadlines. This service supports new homeowners during the Tarion warranty process.",
     icon: ShieldCheck,
     action: "Learn More",
     href: "/home-inspections/new-construction",
     items: [
-      "Warranty Reviews",
-      "Deficiency Identification",
-      "Quality Assessment",
-      "Builder Documentation",
+      "Warranty Milestone Reviews",
+      "Visible Deficiency Documentation",
+      "Construction Quality Observations",
+      "Builder Submission Support",
     ],
   },
   {
     title: "Annual Home Maintenance Inspection",
     description:
-      "Stay ahead of costly repairs with routine inspections that identify maintenance priorities and help extend the life of your home's major systems.",
+      "Identify developing maintenance concerns, establish repair priorities, and support the long-term care of your home and its major systems.",
     icon: Wrench,
     action: "Learn More",
     href: "/home-inspections/annual-maintenance",
     items: [
       "Preventive Maintenance",
-      "Seasonal Review",
+      "Seasonal Conditions",
       "Building Performance",
       "Long-Term Planning",
     ],
@@ -72,26 +71,39 @@ const services = [
 
 export default function InspectionTypes() {
   return (
-    <section className="bg-[#F8FAFC] py-28">
+    <section
+      id="inspection-services"
+      aria-labelledby="inspection-services-heading"
+      className="scroll-mt-24 bg-[#F8FAFC] py-20 sm:py-24 lg:py-28"
+    >
       <Container>
-        <SectionHeader
-          eyebrow="Inspection Services"
-          title="Choose the inspection that's right for your property."
-          description="Whether you're buying, selling, or maintaining a home, TrueNorth provides engineering-led inspection services designed to give you confidence in your property's condition."
-        />
+        <Reveal y={24} amount={0.2}>
+          <SectionHeader
+            eyebrow="Inspection Services"
+          title="The right inspection for every stage of homeownership."
+            description="Whether you are buying, selling, moving into a new home, or planning long-term maintenance, Velora provides professional inspections designed to improve your understanding of the property."
+          />
+        </Reveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          {services.map((service) => (
-            <ServiceCard
+        <div className="mt-14 grid gap-6 lg:mt-16 lg:grid-cols-2 lg:gap-8">
+          {services.map((service, index) => (
+            <Reveal
               key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              label={service.label}
-              action={service.action}
-              items={service.items}
-              href={service.href}
-            />
+              delay={index * 0.08}
+              y={22}
+              amount={0.12}
+              className="h-full"
+            >
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                label={service.label}
+                action={service.action}
+                items={service.items}
+                href={service.href}
+              />
+            </Reveal>
           ))}
         </div>
       </Container>

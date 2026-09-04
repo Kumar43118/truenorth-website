@@ -1,59 +1,78 @@
-import { Award, Microscope, ShieldCheck } from "lucide-react";
+import {
+  Award,
+  Microscope,
+  ShieldCheck,
+} from "lucide-react";
+
+import Reveal from "@/components/animations/Reveal";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const features = [
   {
     icon: Award,
-    title: "Professional Engineering",
+    title: "Engineering-Informed Perspective",
     description:
-      "Every inspection is completed by a Licensed Professional Engineer with expertise in building science, structural systems, and residential construction.",
+      "Our inspection approach is informed by professional engineering experience in building science, structural systems, and existing building conditions.",
   },
   {
     icon: Microscope,
-    title: "Evidence-Based Assessments",
+    title: "Condition-Focused Evaluation",
     description:
-      "Recommendations are based on engineering principles, field observations, and recognized industry standards—not assumptions.",
+      "Visible conditions are considered in the context of how building systems interact, helping identify concerns that may warrant maintenance, repair, or further investigation.",
   },
   {
     icon: ShieldCheck,
     title: "Independent Advice",
     description:
-      "We do not perform repair work or accept referral commissions. Our only priority is providing objective technical guidance.",
+      "Velora does not perform repair work or accept contractor referral commissions. Recommendations are focused on observed conditions and the needs of the client.",
   },
 ];
 
 export default function WhyEngineer() {
   return (
-    <section className="bg-white py-28">
+    <section
+      aria-labelledby="why-velora-inspections-heading"
+      className="bg-white py-20 sm:py-24 lg:py-28"
+    >
       <Container>
-        <SectionHeader
-          eyebrow="Why Choose TrueNorth"
-          title="Engineering expertise that goes beyond a standard home inspection."
-          description="Our inspections combine practical field experience with engineering judgment, helping homeowners understand not only what issues exist—but why they matter."
-        />
+        <Reveal y={24} amount={0.2}>
+          <SectionHeader
+            eyebrow="Why Choose Velora"
+            title="A building-focused perspective on home inspections."
+            description="Our inspections combine practical field experience with building science and engineering knowledge to help clients better understand observed conditions and their potential significance."
+          />
+        </Reveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {features.map((feature) => {
+        <div className="mt-14 grid gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+          {features.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
-              <div
+              <Reveal
                 key={feature.title}
-                className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                delay={index * 0.08}
+                y={22}
+                amount={0.15}
+                className="h-full"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#102A43]">
-                  <Icon className="h-8 w-8 text-[#D4A63A]" />
-                </div>
+                <article className="group h-full rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#D4A63A]/40 hover:shadow-[0_24px_60px_-30px_rgba(15,23,42,0.35)] sm:p-8">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#102A43] text-[#D4A63A]">
+                    <Icon
+                      aria-hidden="true"
+                      className="h-7 w-7"
+                    />
+                  </div>
 
-                <h3 className="mt-8 text-2xl font-semibold text-[#102A43]">
-                  {feature.title}
-                </h3>
+                  <h3 className="mt-7 text-2xl font-semibold tracking-[-0.015em] text-[#102A43]">
+                    {feature.title}
+                  </h3>
 
-                <p className="mt-4 leading-8 text-slate-600">
-                  {feature.description}
-                </p>
-              </div>
+                  <p className="mt-4 leading-7 text-slate-600">
+                    {feature.description}
+                  </p>
+                </article>
+              </Reveal>
             );
           })}
         </div>

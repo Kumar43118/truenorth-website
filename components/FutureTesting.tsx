@@ -23,7 +23,7 @@ export default function FutureTesting() {
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-200">
-                TrueNorth is being built to grow beyond residential inspections
+                Velora is being built to grow beyond residential inspections
                 into building performance testing, envelope diagnostics, and
                 technical consulting services.
               </p>

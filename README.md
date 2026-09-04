@@ -1,8 +1,8 @@
-# TrueNorth Building Science
+# Velora Building Science
 
 **Engineering Clarity. Confident Decisions.**
 
-TrueNorth Building Science is an engineering-led residential building assessment and building science consultancy based in Ottawa, Ontario.
+Velora Building Science is an engineering-led residential building assessment and building science consultancy based in Ottawa, Ontario.
 
 The company combines professional engineering expertise with residential property assessments to help homeowners make informed decisions through objective, evidence-based evaluations.
 
@@ -38,10 +38,10 @@ The website has been built using modern web technologies with a focus on:
 
 - Premium Hero Section
 - Responsive Navigation
-- Why Choose TrueNorth
+- Why Choose Velora
 - Residential Inspection Services
 - Inspection Process
-- The TrueNorth Approach
+- The Velora Approach
 - FAQ
 - Contact Section
 - Responsive Footer
@@ -82,7 +82,6 @@ The website has been built using modern web technologies with a focus on:
 - Engineering Services
 
     - Building Envelope Consulting
-    - Structural Reviews
     - Rehabilitation Consulting
     - Reserve Fund Studies
     - Building Performance Testing
@@ -108,4 +107,4 @@ The website has been built using modern web technologies with a focus on:
 Clone the repository
 
 ```bash
-git clone https://github.com/Kumar43118/truenorth-website.git
+git clone https://github.com/Kumar43118/Velora-website.git
