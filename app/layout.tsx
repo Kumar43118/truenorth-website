@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 import Schema from "@/components/seo/Schema";
 import {
@@ -73,10 +74,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Schema
           id="velora-global-schema"
           data={[veloraBusinessSchema, veloraWebsiteSchema]}
-        />
-
+          />
+        
         {children}
+      <VercelAnalytics />
       </body>
     </html>
+  
   );
 }
